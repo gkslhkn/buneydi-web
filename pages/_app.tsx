@@ -3,6 +3,9 @@
 import type { AppProps } from "next/app";
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+
 import "../styles/all.min.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -52,7 +55,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Script src="/functions.js" strategy="afterInteractive" />
+      <Header />
       <Component {...pageProps} />
+      <Footer />
       {theme}
     </>
   );
